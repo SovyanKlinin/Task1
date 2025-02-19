@@ -7,12 +7,28 @@
 }
 
 @mixin container {
-    width: 1200px;
+    width: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
 }
+
+@mixin button {
+    @include body-text();
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #69B9FF;
+    color: $body-color;
+}
+
+@mixin button-hover {
+    box-shadow: 0 3px 5px 3px rgba(57, 61, 77, 0.4);
+    transition: box-shadow 0.5s;
+}
+
+$body-color: rgb(244, 247, 250);
 
 * {
 	padding: 0px;
@@ -27,12 +43,12 @@ a {
 
 body {
     @include body-text();
+    background-color: $body-color;
 
     .header {
         @include container();
         justify-content: space-between;
         padding: 20px 0 20px;
-        width: 900px;
 
         .header-logo {
             display: flex;
@@ -76,25 +92,117 @@ body {
 
         .main_title {
             text-transform: uppercase;
-            color: rgb(255, 255, 255);
+            color: $body-color;
             font-size: 36px;
         }
 
         .main-button {
             .main-button_button {
-                @include body-text();
-                padding: 15px 30px;
-                cursor: pointer;
-                border-radius: 5px;
-                background-color: #69B9FF;
-                color: rgb(255, 255, 255);
+                @include button();
             }
 
             .main-button_button:hover {
-                box-shadow: 0 7px 10px 6px rgba(57, 61, 77, 0.4);
-                transition: box-shadow 0.4s;
+                @include button-hover();
             }
         }
 
+    }
+
+    .about {
+        @include container();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 0 60px;
+
+        .about_title {
+            @include body-text();
+            text-transform: uppercase;
+            font-size: 28px;
+        }
+
+        .about_image {
+            width: 500px;
+            height: 300px;
+            background-image: url(http://localhost:8080/images/about-image.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .about_text {
+            width: 600px;
+            text-align: center;
+        }
+
+    }
+
+    .contacts {
+        @include container();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding-bottom: 60px;
+
+        .contacts_title {
+            @include body-text();
+            text-transform: uppercase;
+            font-size: 28px;
+        }
+
+        .contacts_social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            .contacts-social_item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .contacts-social_text {
+                @include body-text();
+                font-size: 16px;
+            }
+        }
+
+        .contacts_number {
+            @include body-text();
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .contacts_button {
+            .contacts-button_button {
+                @include button();
+            }
+
+            .contacts-button_button:hover {
+                @include button-hover();
+            }
+        }
+
+    }
+
+    .footer {
+        @include container();
+        padding: 20px 0 20px;
+        width: 100%;
+        background-color: #383838; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .footer_text {
+            color: $body-color;
+            opacity: 0.6;
+        }
     }
 }

@@ -1,2 +1,4 @@
 import "../styles/main.scss";
-import img from "../assets/images/main-image.png";
+import mainImage from "../assets/images/main-image.png";
+import aboutImage from "../assets/images/about-image.png"
+

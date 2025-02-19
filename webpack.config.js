@@ -54,6 +54,11 @@ module.exports = {
           outputPath: 'images',
         },
       },
+
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
     ],
   },
   
@@ -67,7 +72,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    compress: true,
+  
     open: true,
   },
 
