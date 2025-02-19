@@ -13,7 +13,11 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/, 
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
       },
 
       {
@@ -28,6 +32,18 @@ module.exports = {
             ]
           }
         }
+      },
+
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
       },
 
       {
@@ -51,6 +67,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
+    compress: true,
     open: true,
   },
 

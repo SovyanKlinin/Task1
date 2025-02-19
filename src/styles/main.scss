@@ -1,5 +1,100 @@
-$body-color: aquamarine;
+@mixin body-text {
+    font: {
+        family: Arial, sans-serif;
+        size: 20px;
+    }
+    color: rgb(29, 29, 29);
+}
+
+@mixin container {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
 
 body {
-    background-color: $body-color;
+    @include body-text();
+
+    .header {
+        @include container();
+        justify-content: space-between;
+        padding: 20px 0 20px;
+        width: 900px;
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .header-logo_title {
+                text-transform: uppercase;
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .header-nav_item {
+                list-style: none;
+                
+
+                a {
+                    @include body-text();
+                }
+            }
+        }
+
+    }
+
+    .main {
+        @include container();
+        width: 100%;
+        height: 500px;
+        background-image: url(http://localhost:8080/images/main-image.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .main_title {
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+        }
+
+        .main-button {
+            .main-button_button {
+                @include body-text();
+                padding: 15px 30px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: #69B9FF;
+                color: rgb(255, 255, 255);
+            }
+
+            .main-button_button:hover {
+                box-shadow: 0 7px 10px 6px rgba(57, 61, 77, 0.4);
+                transition: box-shadow 0.4s;
+            }
+        }
+
+    }
 }
