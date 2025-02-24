@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velocity</title>
 </head>
+
 <body>
 
   <header class="header" id="getUp">
     <div class="header-logo">
       <div class="header-logo_logo">
-        <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M418.4 157.9c35.3-8.3 61.6-40 61.6-77.9c0-44.2-35.8-80-80-80c-43.4 0-78.7 34.5-80 77.5L136.2
-           151.1C121.7 136.8 101.9 128 80 128c-44.2 0-80 35.8-80 80s35.8 80 80 80c12.2 0 23.8-2.7 34.1-7.6L259.7 
-           407.8c-2.4 7.6-3.7 15.8-3.7 24.2c0 44.2 35.8 80 80 80s80-35.8 80-80c0-27.7-14-52.1-35.4-66.4l37.8-207.7zM156.3
-            232.2c2.2-6.9 3.5-14.2 3.7-21.7l183.8-73.5c3.6 3.5 7.4 6.7 11.6 9.5L317.6 
-            354.1c-5.5 1.3-10.8 3.1-15.8 5.5L156.3 232.2z"/></svg>
+        <svg width="30px" height="30px" viewBox="0 0 512 512">
+          <use href="svg.svg#logo-svg"></use>
+        </svg>
       </div>
       <div class="header-logo_title">Velocity</div>
     </div>
-      <ul class="header-nav">
-        <li class="header-nav_item">
-          <a href="#about">About</a>
-        </li>
-        <li class="header-nav_item">
-          <a href="#contacts">Contacts</a>
-        </li>
-      </ul>
+    <ul class="header-nav">
+      <li class="header-nav_item">
+        <a href="#about">About</a>
+      </li>
+      <li class="header-nav_item">
+        <a href="#contacts">Contacts</a>
+      </li>
+    </ul>
   </header>
 
   <section class="main">
@@ -40,11 +39,11 @@
     <div class="about_title">About</div>
     <div class="about_image"></div>
     <div class="about_text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Suspendisse varius enim in eros elementum tristique.Lorem 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse varius enim in eros elementum tristique.Lorem
       ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse varius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Suspendisse varius enim in eros elementum tristique.Lorem 
+      Suspendisse varius.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse varius enim in eros elementum tristique.Lorem
       ipsum dolor sit amet, consectetur adipiscing elit.
       Suspendisse varius.
     </div>
@@ -54,52 +53,20 @@
     <div class="contacts_title">Contact</div>
     <div class="contacts_social">
       <a href="" class="contacts-social_item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20" fill="none" class="contacts-social_icon">
-          <path d="M17.4667 6.40008C17.4667 6.53342 17.4667 6.73342 17.4667 6.86675C17.4667
-           11.8667 13.6667 17.6001 6.73335 17.6001C4.60002 17.6001 2.60002 17.0001 0.93335 
-           15.9334C1.20002 15.9334 1.53335 16.0001 1.86668 16.0001C3.66668 16.0001 5.26668
-            15.4001 6.53335 14.4001C4.86668 14.4001 3.46668 13.2667 3.00002 11.8001C3.20002 
-            11.8667 3.46668 11.8667 3.73335 11.8667C4.06668 11.8667 4.40002 11.8001 4.73335
-             11.7334C3.00002 11.3334 1.66668 9.80008 1.66668 8.00008C1.66668 8.00008 1.66668 
-             8.00008 1.66668 7.93341C2.20002 8.20008 2.73335 8.40008 3.40002 8.40008C2.40002
-              7.73342 1.73335 6.60008 1.73335 5.26675C1.73335 4.60008 1.93335 3.93341 2.26668 
-              3.40008C4.13335 5.66675 6.93335 7.20008 10.0667 7.33342C10 7.06675 10 6.80008 
-              10 6.46675C10 4.40008 11.6667 2.66675 13.8 2.66675C14.8667 2.66675 15.8667
-               3.13341 16.5333 3.86675C17.4 3.66675 18.2 3.40008 18.9333 2.93341C18.6667
-                3.80008 18.0667 4.53341 17.2667 5.00008C17.9333 4.93341 18.6667 4.73341 
-                19.3334 4.46675C18.8 5.20008 18.2 5.86675 17.4667 6.40008Z" fill="black"/>
-          </svg>
-          <div class="contacts-social_text">Twitter</div>
+        <svg width="30px" height="30px" viewBox="0 0 512 512">
+          <use href="svg.svg#twitter-icon"></use>
+        </svg>
+        <div class="contacts-social_text">Twitter</div>
       </a>
       <a href="" class="contacts-social_item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20" fill="none" class="contacts-social_icon">
-          <path d="M17.3333 0.666748H3.33331C2.19998 0.666748 1.33331 1.53341 1.33331 2.66675V16.6667C1.33331
-           17.8001 2.19998 18.6667 3.33331 18.6667H10.3333V11.6667H8.33331V9.20008H10.3333V7.13341C10.3333
-            5.00008 11.5333 3.46675 14.0666 3.46675H15.8666V6.06675H14.6666C13.6666 6.06675 13.2666 6.80008 
-            13.2666 7.53341V9.20008H15.8666L15.3333 11.6667H13.3333V18.6667H17.3333C18.4666 18.6667 19.3333
-             17.8001 19.3333 16.6667V2.66675C19.3333 1.53341 18.4666 0.666748 17.3333 0.666748Z" fill="black"/>
-          </svg>
-          <div class="contacts-social_text">Facebook</div>
+        <svg width="30px" height="30px" viewBox="0 0 512 512">
+          <use href="svg.svg#facebook-icon"></use>
+        </svg>
+        <div class="contacts-social_text">Facebook</div>
       </a>
       <a href="" class="contacts-social_item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20" fill="none" class="contacts-social_icon">
-          <path d="M2.26666 5.73325C2.26666 7.19992 2.73333 8.33325 3.73333 8.93325C4.53333 9.46658 5.46666 
-          9.53325 5.93333 9.53325C6.06666 9.53325 6.13333 9.53325 6.2 9.53325C6.2 9.53325 6.06666 10.5333
-          6.8 11.5333H6.73333C5.46666 11.5333 1.26666 11.7999 1.26666 15.2666C1.26666 18.7999 5.13333 18.9333
-           5.93333 18.9333C6 18.9333 6 18.9333 6 18.9333C6 18.9333 6.06666 18.9333 6.13333 18.9333C6.6 18.9333
-           7.93333 18.8666 9.13333 18.2666C10.6667 17.5333 11.4667 16.1999 11.4667 14.3999C11.4667 12.6666 
-          10.2667 11.5999 9.4 10.7999C8.86666 10.3333 8.4 9.93325 8.4 9.53325C8.4 9.13325 8.73333 8.79992 
-          9.13333 8.46658C9.8 7.86658 10.4667 6.99992 10.4667 5.33325C10.4667 3.86659 10.2667 2.86659 
-          9.13333 2.26659C9.33333 2.19992 9.8 2.13325 10 2.13325C10.6 2.06659 11.5333 1.93325 11.5333 
-           1.46659V1.33325H6.93333C6.86666 1.33325 2.26666 1.53325 2.26666 5.73325ZM9.73333 14.7333C9.8 
-          16.1333 8.6 17.1999 6.8 17.3333C4.93333 17.4666 3.46666 16.6666 3.4 15.2666C3.33333 14.5999
-          3.66666 13.9333 4.26666 13.3999C4.86666 12.8666 5.66666 12.5333 6.53333 12.4666C6.66666 
-          12.4666 6.73333 12.4666 6.86666 12.4666C8.46666 12.3999 9.6 13.3999 9.73333 14.7333ZM8.53333
-          4.73325C9 6.33325 8.33333 7.99992 7.2 8.26658C7.06666 8.33325 6.93333 8.33325 6.8 8.33325C5.8 
-           8.33325 4.8 7.33325 4.46666 5.93325C4.26666 5.19992 4.26666 4.53325 4.53333 3.86659C4.73333 
-          3.19992 5.2 2.79992 5.66666 2.66659C5.8 2.59992 5.93333 2.59992 6.06666 2.59992C7.26666 2.59992
-          8 3.06659 8.53333 4.73325ZM16.2667
-          8.13325V5.13325H14.2667V8.13325H11.2667V10.1333H14.2667V13.1333H16.2667V10.1333H19.2667V8.13325H16.2667Z" fill="black"/>
+        <svg width="30px" height="30px" viewBox="0 0 512 512">
+          <use href="svg.svg#google-icon"></use>
         </svg>
         <div class="contacts-social_text">Google</div>
       </a>
@@ -124,14 +91,15 @@
            0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 
            45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 
            45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 
-           0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+           0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+        </svg>
       </div>
       <div class="form-content" id="formContent">
         <div class="form-title">Form</div>
         <div class="form_items">
-            <input type="text" name="name" placeholder="Name" class="form_item" id="name">
-            <input type="email" name="email" placeholder="Email" class="form_item" id="email">
-            <input type="tel" name="number" placeholder="Number" class="form_item" id="number">
+          <input type="text" name="name" placeholder="Name" class="form_item" id="name">
+          <input type="email" name="email" placeholder="Email" class="form_item" id="email">
+          <input type="tel" name="number" placeholder="Number" class="form_item" id="number">
         </div>
         <div class="form_button">
           <input type="button" value="Submit" class="form-button_button" id="formSubmit">
@@ -151,10 +119,12 @@
         <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 
         5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 
         0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 
-        3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/></svg>
+        3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z" />
+      </svg>
     </a>
-  
+
   </div>
 
 </body>
+
 </html>
