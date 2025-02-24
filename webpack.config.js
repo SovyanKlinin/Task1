@@ -53,11 +53,16 @@ module.exports = {
 
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'images',
-        },
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+              publicPath: 'images'
+            },
+          }
+        ]
       },
 
       {
