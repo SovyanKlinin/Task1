@@ -3,14 +3,19 @@
         family: Arial, sans-serif;
         size: 20px;
     }
+
     color: rgb(29, 29, 29);
 }
 
-@mixin container {
-    width: 900px;
+@mixin flex {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin container {
+    @include flex();
+    width: 900px;
     margin: 0 auto;
 }
 
@@ -21,19 +26,19 @@
     border-radius: 5px;
     background-color: #69B9FF;
     color: $body-color;
-}
 
-@mixin button-hover {
-    box-shadow: 0 3px 5px 3px rgba(57, 61, 77, 0.4);
-    transition: box-shadow 0.5s;
+    &:hover {
+        box-shadow: 0 3px 5px 3px rgba(57, 61, 77, 0.4);
+        transition: box-shadow 0.5s;
+    }
 }
 
 $body-color: rgb(244, 247, 250);
 
 * {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
     box-sizing: border-box;
 }
 
@@ -44,250 +49,221 @@ a {
 body {
     @include body-text();
     background-color: $body-color;
+}
 
-    .header {
-        @include container();
-        justify-content: space-between;
-        padding: 20px 0 20px;
+.header {
+    @include container();
+    justify-content: space-between;
+    padding: 20px 0 20px;
 
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+    &-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-            .header-logo_title {
-                text-transform: uppercase;
-            }
+        .header-logo_title {
+            text-transform: uppercase;
         }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-
-            .header-nav_item {
-                list-style: none;
-                
-
-                a {
-                    @include body-text();
-                }
-            }
-        }
-
     }
 
-    .main {
-        @include container();
-        width: 100%;
-        height: 500px;
-        background-image: url('./../assets/images/main-image.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    &-nav {
+        @include flex();
         gap: 20px;
 
-        .main_title {
-            text-transform: uppercase;
-            color: $body-color;
-            font-size: 36px;
-        }
+        &_item {
+            list-style: none;
 
-        .main-button {
-            .main-button_button {
-                @include button();
-            }
-
-            .main-button_button:hover {
-                @include button-hover();
-            }
-        }
-
-    }
-
-    .about {
-        @include container();
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 30px 0 60px;
-
-        .about_title {
-            @include body-text();
-            text-transform: uppercase;
-            font-size: 28px;
-        }
-
-        .about_image {
-            width: 500px;
-            height: 300px;
-            background-image: url('./../assets/images/about-image.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .about_text {
-            width: 600px;
-            text-align: center;
-        }
-
-    }
-
-    .contacts {
-        @include container();
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding-bottom: 60px;
-
-        .contacts_title {
-            @include body-text();
-            text-transform: uppercase;
-            font-size: 28px;
-        }
-
-        .contacts_social {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-
-            .contacts-social_item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .contacts-social_text {
+            a {
                 @include body-text();
-                font-size: 16px;
             }
         }
+    }
 
-        .contacts_number {
+}
+
+.main {
+    @include container();
+    @include flex();
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 500px;
+    background-image: url('./../assets/images/main-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &_title {
+        text-transform: uppercase;
+        color: $body-color;
+        font-size: 36px;
+    }
+
+    &-button {
+        .main-button_button {
+            @include button();
+        }
+
+    }
+
+}
+
+.about {
+    @include container();
+    @include flex();
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 0 60px;
+
+    &_title {
+        @include body-text();
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+    &_image {
+        width: 500px;
+        height: 300px;
+        background-image: url('./../assets/images/about-image.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &_text {
+        width: 600px;
+        text-align: center;
+    }
+
+}
+
+.contacts {
+    @include container();
+    @include flex();
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 60px;
+
+    &_title {
+        @include body-text();
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+    &_social {
+        @include flex();
+        gap: 30px;
+
+        &-item {
+            @include flex();
+            gap: 10px;
+        }
+
+        .item_text {
             @include body-text();
-            text-transform: uppercase;
             font-size: 16px;
         }
+    }
 
-        .contacts_button {
-            .contacts-button_button {
-                @include button();
-            }
+    &_number {
+        @include body-text();
+        text-transform: uppercase;
+        font-size: 16px;
+    }
 
-            .contacts-button_button:hover {
-                @include button-hover();
-            }
+    &_button {
+        .button_button {
+            @include button();
         }
 
     }
 
-    .footer {
-        @include container();
-        padding: 20px 0 20px;
-        width: 100%;
-        background-color: #383838; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+}
 
-        .footer_text {
-            color: $body-color;
-            opacity: 0.6;
-        }
+.footer {
+    @include container();
+    @include flex();
+    padding: 20px 0 20px;
+    width: 100%;
+    background-color: #383838;
+
+    &_text {
+        color: $body-color;
+        opacity: 0.6;
     }
+}
 
-    .form-section {
-        @include container();
-        display: none;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(23, 23, 23, 0.6);
-        position: fixed;
-        top: 0;
-        
-        .form {
-            display: flex;
+.form-section {
+    @include container();
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(23, 23, 23, 0.6);
+
+    &_form {
+        @include flex();
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 60px 60px;
+        position: relative;
+        background-color: $body-color;
+
+        .form-content {
+            @include flex();
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             gap: 30px;
             position: relative;
-            background-color: $body-color;
-            padding: 80px 60px 60px;
 
-            .form-content {
-                display: flex;
+            .form-title {
+                text-transform: uppercase;
+                font-size: 24px;
+
+            }
+
+            .form_items {
+                @include flex();
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 30px;
-                position: relative;
-    
-                .form-title {
-                    text-transform: uppercase;
-                    font-size: 24px;
-    
-                }
-    
-                .form_items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 20px;
-    
-                    .form_item {
-                        padding: 5px;
-                        border: 1px solid #69B9FF;
-                    }
-                }
-    
-                .form_button {
-    
-                    .form-button_button {
-                        @include button();
-                    }
-    
-                    .form-button_button:hover {
-                        @include button-hover();
-                    }
-                }
+                gap: 20px;
 
-            }
-
-            .form_close-icon {
-                position: absolute;
-                right: 5px;
-                top: 5px;
-
-                #formClosed {
-                    cursor: pointer;
+                .form_item {
+                    padding: 5px;
+                    border: 1px solid #69B9FF;
                 }
             }
 
-            .form-result {
-                display: none;
-                align-items: center;
-                justify-content: center;
+            .form_button {
+
+                &_button {
+                    @include button();
+                }
+
             }
 
         }
-    }
 
-    .get-up {
-        cursor: pointer;
-        position: fixed;
-        left: 30px;
-        bottom: 30px;
+        .form_close-icon {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+            #formClosed {
+                cursor: pointer;
+            }
+        }
+
+        .form-result {
+            @include flex();
+            display: none;
+        }
+
     }
+}
+
+.get-up {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    cursor: pointer;
 }
